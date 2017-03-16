@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_action :set_cart, only: [:new, :create]
+  before_action :set_cart, only: [:create]
   #[:show, :edit, :update, :destroy]
 
   # GET /carts

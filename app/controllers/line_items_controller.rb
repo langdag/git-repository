@@ -31,7 +31,7 @@ class LineItemsController < ApplicationController
   def create
     product = Product.find(params[:product_id])
     @line_item = @cart.add_product(product)
-    
+
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to @line_item.cart,
@@ -71,7 +71,7 @@ class LineItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_line_item
-      @line_item = LineItem.find(params[:id])
+      @line_item = LineItem.find_by(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
