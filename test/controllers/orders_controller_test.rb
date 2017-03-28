@@ -1,6 +1,14 @@
 require 'test_helper'
 
 class OrdersControllerTest < ActionDispatch::IntegrationTest
+	setup do
+    @update = {
+      name:        'Jack',
+      address:  'Boulevard 15',
+      email:    'town@.gmail.com',
+      pay_type:  "Check"
+    }
+  end
 
 	test "requires item in cart" do
 		get new_order_url
@@ -17,9 +25,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
 
 	test "should create order" do
 		assert_difference('Order.count') do
-			post orders_url, params: { order: { address: @order.address,
-			email: @order.email, name: @order.name,
-			pay_type: @order.pay_type } }
+			post orders_url, params: { order: @update }
 		end
 
 		assert_redirected_to store_index_url
