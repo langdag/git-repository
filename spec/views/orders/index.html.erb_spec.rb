@@ -7,7 +7,7 @@ RSpec.describe "orders/index", type: :view do
         :name => "Name",
         :address => "MyText",
         :email => "Email",
-        : pay_type => 2
+        :pay_type => 2
       ),
       Order.create!(
         :name => "Name",
