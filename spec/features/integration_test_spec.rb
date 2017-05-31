@@ -6,15 +6,15 @@ let(:ruby) {build(:ruby)}
 let(:cart) {build(:cart)}
 
 	scenario "GET /" do
-    	visit  store_index_path
-    	expect(response).to have_http_status(200)
-    	expect(page).to have_content 'h1', "Your Pragmatic Catalog"
+    	visit  '/'
+    	expect(page).to have_http_status(:success)
+    	expect(page).to have_content "Your Pragmatic Catalog"
 	end
 	
 	scenario "User selects a product adding it to his cart" do
 		visit  store_index_path
-		expect(response).to have_http_status(200)
-		find_button('Add to Cart').click
+		expect(page).to have_http_status(:success)
+		page.find(".price_line").click_button('Add to Cart')
 		expect(page).to have_current_path(line_items_path(product_id: product))
 		page.find(cart_id: cart)
 		expect(cart.line_items.size).to eq(1)
