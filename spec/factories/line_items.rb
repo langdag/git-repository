@@ -1,11 +1,11 @@
 FactoryGirl.define do 
 	
-	factory :line_item do 		
+	factory :one do 		
   		product 
  		cart 
  	end
 
- 	factory :two, parent: :line_item do 
+ 	factory :two, parent: :one do 
   		association :product, factory: :ruby
   		association :order, factory: :dave 
 	end
