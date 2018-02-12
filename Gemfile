@@ -11,7 +11,8 @@ end
 gem 'rails', '~> 5.0.1'
 # Use postgresql as the database for Active Record
 gem 'pg','~> 0.21' 
-
+# Use Puma as the app server
+gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -39,8 +40,6 @@ gem 'jbuilder', '~> 2.5'
 group :production do
   #Gem for Heroku deployment
   gem 'rails_12factor'
-  # Use Puma as the app server
-  gem 'puma', '~> 3.0'
 end
 
 group :development, :test do
