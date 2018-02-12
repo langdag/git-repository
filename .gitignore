@@ -41,4 +41,4 @@
 database.yml
 secrets.yml
 doc/
-*.swp
+*.swp.env
